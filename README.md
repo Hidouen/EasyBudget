@@ -9,12 +9,41 @@ EasyBudget is a personal budget management application designed to help you trac
 * Data visualization through charts
 * Intuitive user interface
 
-## Technologies Used
+## Technologies used
 
 * **Backend**: Spring Boot
 * **Database**: PostgreSQL
 * **Frontend**: Angular
 * **Containerization**: Docker
+
+## Additional features
+
+* User authentication and authorization
+* Multi-currency support
+* Recurring transactions
+
+## Environment variables
+
+The application uses the following environment variables, which can be configured in the `.env` file:
+
+* `PROJECT_NAME`: Name of the project
+* `PROJECT_DESCRIPTION`: Description of the project
+* `PROJECT_VERSION`: Version of the project
+* `DB_NAME`: Database name
+* `DB_USER`: Database user
+* `DB_PASSWORD`: Database password
+* `DB_HOST`: Database host
+* `DB_PORT`: Database port
+* `BACKEND_HOST`: Backend host
+* `BACKEND_PORT`: Backend port
+* `FRONTEND_HOST`: Frontend host
+* `FRONTEND_PORT`: Frontend port
+* `APP_ENV`: Application environment (e.g., development, production)
+* `APP_DEBUG`: Enable or disable debug mode
+* `APP_KEY`: Application key
+* `API_KEY`: API key
+* `PORT`: Application port
+* `LOG_LEVEL`: Log level
 
 ## Prerequisites
 
@@ -23,39 +52,48 @@ EasyBudget is a personal budget management application designed to help you trac
 
 ## Installation
 
-1.  Clone the repository:
+1. Clone the repository:
 
     ```bash
-    git clone [https://github.com/Hidouen/EasyBudget.git](https://github.com/Hidouen/EasyBudget)
+    git clone https://github.com/Hidouen/EasyBudget.git
     ```
 
-2.  Navigate to the project directory:
+2. Navigate to the project directory:
 
     ```bash
     cd EasyBudget
     ```
 
-3.  Launch the Docker containers:
+3. Launch the Docker containers:
 
     ```bash
-    docker-compose up --build
+    docker compose up --build
     ```
 
-4.  The application will be accessible at `http://localhost:4200`
+4. The application will be accessible at `http://localhost:4200`
 
-## Development
+## Project Structure
 
-### Backend
-
-The Spring Boot backend is located in the `backend` directory.
-
-### Frontend
-
-The Angular frontend is located in the `frontend` directory.
-
-### Database
-
-The PostgreSQL database is configured in the `docker-compose.yml` file.
+```
+EasyBudget/
+├── backend/
+│   ├── Dockerfile
+│   ├── pom.xml
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── .mvn/
+│   │   └── wrapper/
+│   │       ├── maven-wrapper.jar
+│   │       └── maven-wrapper.properties
+│   └── src/
+├── frontend/
+│   ├── Dockerfile
+│   ├── src/
+│   └── package.json
+├── docker-compose.yaml
+├── .gitignore
+└── README.md
+```
 
 ## Contributing
 

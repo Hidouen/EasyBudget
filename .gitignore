@@ -35,3 +35,25 @@ docker-compose.override.yml
 
 # Database folder
 db/data/
+
+# to check :
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Node.js
+node_modules/
+dist/
+
+# Docker
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# IDEs
+.idea/
+.vscode/
