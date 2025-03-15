@@ -60,6 +60,14 @@ EasyBudget/
 └── README.md
 ```
 
+## Initialisation inside containeurs
+
+    ```bash
+    spring init --build=maven --java-version=21 --dependencies=web,data-jpa,postgresql,validation,security,devtools,data-rest --packaging=jar --name=easybudget
+    unzip demo.zip
+    ```
+
+
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
