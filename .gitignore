@@ -1,29 +1,9 @@
-# Build files and dependencies (Spring Boot)
-back/target/
-back/bin/
-back/.mvn/wrapper/target/
-back/.classpath
-back/.project
-back/.settings/
-back/*.iml
-back/*.ipr
-back/*.iws
-
-# Build files and dependencies (Angular)
-front/node_modules/
-front/dist/
-front/package-lock.json
-
 # Local configuration files
 .env
 *.log
 *.swp
 *.swo
 .DS_Store
-
-# Docker files
-.dockerignore
-docker-compose.override.yml
 
 # IDE specific files (IntelliJ IDEA, Eclipse, VS Code, etc.)
 .idea/
@@ -32,28 +12,3 @@ docker-compose.override.yml
 *.ntvs*
 *.njsproj
 *.sln
-
-# Database folder
-db/data/
-
-# to check :
-# Java
-target/
-*.class
-*.jar
-*.war
-*.ear
-
-# Node.js
-node_modules/
-dist/
-
-# Docker
-*.log
-*.pid
-*.seed
-*.pid.lock
-
-# IDEs
-.idea/
-.vscode/

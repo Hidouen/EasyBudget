@@ -1,28 +1,31 @@
-# Utiliser une image de base OpenJDK
-FROM openjdk:17-jdk-slim
+# Build stage
+FROM maven:3.9-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Définir le répertoire de travail
+# Run stage
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
+
+FROM maven:3.9-eclipse-temurin-17
+
 WORKDIR /app
 
-# Copier le fichier de configuration Maven
-COPY pom.xml .
+# Installation des outils nécessaires
+RUN apt-get update && \
+    apt-get install -y curl
 
-# Copier le wrapper Maven
-COPY .mvn .mvn
-COPY mvnw .
-COPY mvnw.cmd .
+# Installation de Spring Boot CLI
+RUN curl -s https://get.sdkman.io | bash && \
+    /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && \
+    sdk install springboot"
 
-# Télécharger les dépendances Maven
-RUN ./mvnw dependency:go-offline
-
-# Copier le code source du backend
-COPY src ./src
-
-# Compiler le projet
-RUN ./mvnw package -DskipTests
-
-# Exposer le port de l'application
+# Exposer le port
 EXPOSE 8080
 
-# Démarrer l'application
-CMD ["java", "-jar", "target/easybudget-0.0.1-SNAPSHOT.jar"]
+# Garder le conteneur en vie pour l'initialisation manuelle
+CMD ["sh", "-c", "while :; do sleep 10; done"]

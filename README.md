@@ -16,35 +16,6 @@ EasyBudget is a personal budget management application designed to help you trac
 * **Frontend**: Angular
 * **Containerization**: Docker
 
-## Additional features
-
-* User authentication and authorization
-* Multi-currency support
-* Recurring transactions
-
-## Environment variables
-
-The application uses the following environment variables, which can be configured in the `.env` file:
-
-* `PROJECT_NAME`: Name of the project
-* `PROJECT_DESCRIPTION`: Description of the project
-* `PROJECT_VERSION`: Version of the project
-* `DB_NAME`: Database name
-* `DB_USER`: Database user
-* `DB_PASSWORD`: Database password
-* `DB_HOST`: Database host
-* `DB_PORT`: Database port
-* `BACKEND_HOST`: Backend host
-* `BACKEND_PORT`: Backend port
-* `FRONTEND_HOST`: Frontend host
-* `FRONTEND_PORT`: Frontend port
-* `APP_ENV`: Application environment (e.g., development, production)
-* `APP_DEBUG`: Enable or disable debug mode
-* `APP_KEY`: Application key
-* `API_KEY`: API key
-* `PORT`: Application port
-* `LOG_LEVEL`: Log level
-
 ## Prerequisites
 
 * Docker and Docker Compose installed on your machine
@@ -58,16 +29,17 @@ The application uses the following environment variables, which can be configure
     git clone https://github.com/Hidouen/EasyBudget.git
     ```
 
-2. Navigate to the project directory:
+2. Navigate to the project directory and copy .env:
 
     ```bash
     cd EasyBudget
+    cp .env.example .env # Feel free to configure as you want
     ```
 
 3. Launch the Docker containers:
 
     ```bash
-    docker compose up --build
+    docker compose up -d
     ```
 
 4. The application will be accessible at `http://localhost:4200`
@@ -77,21 +49,14 @@ The application uses the following environment variables, which can be configure
 ```
 EasyBudget/
 ├── backend/
-│   ├── Dockerfile
-│   ├── pom.xml
-│   ├── mvnw
-│   ├── mvnw.cmd
-│   ├── .mvn/
-│   │   └── wrapper/
-│   │       ├── maven-wrapper.jar
-│   │       └── maven-wrapper.properties
-│   └── src/
+│   └── Dockerfile
 ├── frontend/
-│   ├── Dockerfile
-│   ├── src/
-│   └── package.json
-├── docker-compose.yaml
+│   └── Dockerfile
+├── .env
+├── .env.example
 ├── .gitignore
+├── compose.yaml
+├── LICENSE
 └── README.md
 ```
 
