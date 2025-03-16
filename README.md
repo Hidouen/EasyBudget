@@ -9,11 +9,11 @@ EasyBudget is a personal budget management application designed to help you trac
 * Data visualization through charts
 * Intuitive user interface
 
-## Technologies used
+## Stack
 
-* **Backend**: Spring Boot
-* **Database**: PostgreSQL
-* **Frontend**: Angular
+* **Backend**: Spring Boot 3.5.x (Java 21)
+* **Database**: PostgreSQL 17.4
+* **Frontend**: Angular 19.2
 * **Containerization**: Docker
 
 ## Prerequisites
@@ -44,6 +44,21 @@ EasyBudget is a personal budget management application designed to help you trac
 
 4. The application will be accessible at `http://localhost:4200`
 
+## Initialisation inside containeurs
+
+### Backend
+
+    ```bash
+    spring init --build=maven --java-version=21 --dependencies=web,data-jpa,postgresql,validation,security,devtools,data-rest --packaging=jar --name=easybudget
+    unzip demo.zip
+    ```
+
+### Frontend
+
+    ```bash
+
+    ```
+
 ## Project Structure
 
 ```
@@ -59,14 +74,6 @@ EasyBudget/
 ├── LICENSE
 └── README.md
 ```
-
-## Initialisation inside containeurs
-
-    ```bash
-    spring init --build=maven --java-version=21 --dependencies=web,data-jpa,postgresql,validation,security,devtools,data-rest --packaging=jar --name=easybudget
-    unzip demo.zip
-    ```
-
 
 ## Contributing
 
