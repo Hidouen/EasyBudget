@@ -46,6 +46,19 @@ EasyBudget is a personal budget management application designed to help you trac
 
 ## Useful commands
 
+### Docker
+
+    ```bash
+    # Stop all running containers
+    docker stop $(docker ps -aq)
+
+    # Remove all containers
+    docker rm $(docker ps -aq)
+
+    # Remove all images
+    docker rmi $(docker images -q)
+    ```
+
 ### Backend
 
     ```bash
