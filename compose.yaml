@@ -16,7 +16,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./config/backend
       dockerfile: Dockerfile
     container_name: ${PROJECT_NAME}_backend
     restart: unless-stopped
